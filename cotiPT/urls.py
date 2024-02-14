@@ -16,7 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from tasadeCambio.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('convertidor-tasas/', convertidor_tasas, name='convertidor_tasas'),
+    path('usdtomxn/', usdtomxn, name='usdtomxn'),
 ]

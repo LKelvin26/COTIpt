@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv=”Content-Language” content=”es”/>
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+	<link rel="stylesheet" href="{% static 'css/form.css' %}">
+	<script src="{% static 'js/main.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Enlaces a tus archivos CSS y scripts JS -->
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+	<div class="header">
+		<a href="/">
+			<img src="{% static 'img/logo.svg' %}" alt="" class="header__logo">
+			<div class="header__info">
+	                <span class="header__text">correo kevin: <b>kevinmarfran2000@gmail.com </b><span class="header__sucursal"></span><br/></span>
+			</div>		
+		</a>
+		<div class="header__info">
+			
+        </div>
+	</div>
+    {% block content %}
+    {% endblock %}
+
+
+    {% block modals %}
+    {% endblock %}
