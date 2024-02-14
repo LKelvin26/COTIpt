@@ -5,31 +5,27 @@ document.addEventListener('DOMContentLoaded', function() {
         // Permite números y un punto decimal
         let valueEntered = this.value;
         if(valueEntered.match(/[^0-9.]/g)){
-            // Remueve caracteres no numéricos excepto el punto
+           
             this.value = valueEntered.replace(/[^0-9.]/g, '');
 
-            // Asegura que solo haya un punto decimal
+        
             if ((this.value.match(/\./g) || []).length > 1) {
                 this.value = this.value.replace(/\.(?=\d*\.)/g, '');
             }
         }
 
-        // Llama a tu función aquí
+       
         
         convertCurrency();
     });
 });
 
 function convertCurrency() {
-    // Asignamos variables a guardar
+    
     var amount = document.getElementById('moneyInput').value; // Asumiendo que este es el input para el monto en pesos
     var data = new FormData();
     data.append('amount', amount);
 
-    // Aquí podrías agregar más datos al FormData si es necesario
-    // Por ejemplo, especificar la moneda de origen y destino si el endpoint lo requiere
-
-    // Obtiene el token CSRF de una manera similar a como lo haces en tu ejemplo
     
 
     var xhttp = new XMLHttpRequest();
@@ -53,7 +49,7 @@ function convertCurrency() {
         }
     };
 
-    // Aquí especifica la URL del endpoint que realiza la conversión de divisas
+    
     xhttp.open("POST", "/usdtomxn/", true);
     
     xhttp.send(data);
